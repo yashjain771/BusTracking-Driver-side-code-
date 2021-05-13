@@ -10,22 +10,44 @@ class TrackingMap extends StatelessWidget {
     var userLocation = Provider.of<UserLocation>(context);
 
     return Scaffold(
+      backgroundColor: Colors.blueGrey[100],
+      appBar: AppBar(
+        title: Text(
+          ' Bus Tracker',
+          style: TextStyle(color: Colors.black, fontSize: 19),
+        ),
+        backgroundColor: Colors.white,
+        elevation: 2.0,
+      ),
       body: Center(
         child: Column(
-          children: [
+          children: <Widget>[
             SizedBox(
-              height: 100.0,
+              height: 30.0,
             ),
-            RaisedButton(
-              onPressed: null,
-              child: Text("start"),
-              color: Colors.amber,
+            FlatButton(
+              height: 40.0,
+              minWidth: 335.0,
+              color: Colors.blueGrey[500],
+              child: Text(
+                '     Stop Tracking     ',
+                style: TextStyle(color: Colors.white),
+              ),
+              onPressed: (){
+                print("pressed stop");
+              },
             ),
             SizedBox(
               height: 50.0,
             ),
-            Text(
-                'Location: Lat${userLocation?.latitude}, Long: ${userLocation?.longitude}'),
+            Text('Lat-> ${userLocation?.latitude}'),
+            Text('Long-> ${userLocation?.longitude}'),
+            SizedBox(
+              height: 100.0,
+            ),
+            SizedBox(
+              height: 50.0,
+            ),
           ],
         ),
       ),

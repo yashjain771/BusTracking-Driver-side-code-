@@ -1,4 +1,5 @@
 import 'package:bus_tracking_system/screens/firstpage.dart';
+import 'package:bus_tracking_system/screens/wrapper.dart';
 import 'package:bus_tracking_system/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return StreamProvider.value(
       value: AuthService().user,
       child: MaterialApp(
-        home: FirstPage(),
+        home: Wrapper(),
       ),
     );
   }

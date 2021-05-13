@@ -9,13 +9,13 @@ class FirstPage extends StatefulWidget {
 class _Page extends State<FirstPage> {
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.purple[100],
+        backgroundColor: Colors.yellow[500],
         appBar: AppBar(
           title: Text(
             'Bus Tracker',
-            style: TextStyle(color: Colors.white, fontSize: 20),
+            style: TextStyle(color: Colors.black, fontSize: 20),
           ),
-          backgroundColor: Colors.deepPurple[900],
+          backgroundColor: Colors.white,
         ),
         body: Container(
           child: Column(

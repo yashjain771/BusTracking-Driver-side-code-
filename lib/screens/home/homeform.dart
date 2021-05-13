@@ -91,7 +91,7 @@ class _HomeFormState extends State<HomeForm> {
     // DatabaseService ins= DatabaseService(uid:user.uid);
     //   ins.updateData(route, busNo);
     print("Button");
-    DatabaseService(route,busNo);
+    DatabaseService(route, busNo);
   }
 
   @override
@@ -104,7 +104,7 @@ class _HomeFormState extends State<HomeForm> {
           children: <Widget>[
             SizedBox(height: 20.0),
             DropdownButtonFormField(
-              hint: Text("Select Bus NO."),
+              hint: Text("Select Bus Number"),
               value: _busNo,
               decoration: textInputDecoration,
               items: buses.map((bus) {
@@ -117,7 +117,7 @@ class _HomeFormState extends State<HomeForm> {
             ),
             SizedBox(height: 20.0),
             DropdownButtonFormField(
-              hint: Text("Select Route."),
+              hint: Text("Select Route"),
               value: _route,
               decoration: textInputDecoration,
               items: routes.map((route) {
@@ -132,14 +132,14 @@ class _HomeFormState extends State<HomeForm> {
             FlatButton(
                 height: 40.0,
                 minWidth: 335.0,
-                color: Colors.brown[400],
+                color: Colors.blueGrey[500],
                 child: Text(
                   '     Start tracking     ',
                   style: TextStyle(color: Colors.white),
                 ),
                 onPressed: () async {
                   print("jhg");
-                  
+
                   // db.inputData();
                   updateData(_route, _busNo);
                   // updateData(_route, _busNo);
