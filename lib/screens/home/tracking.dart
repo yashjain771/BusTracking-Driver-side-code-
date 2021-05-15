@@ -35,6 +35,7 @@ class TrackingMap extends StatelessWidget {
               ),
               onPressed: (){
                 print("pressed stop");
+                Navigator.pop(context);
               },
             ),
             SizedBox(

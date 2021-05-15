@@ -1,9 +1,8 @@
-
+import 'package:bus_tracking_system/screens/authenticate/password.dart';
 import 'package:bus_tracking_system/services/auth.dart';
 import 'package:bus_tracking_system/shared/constants.dart';
 import 'package:bus_tracking_system/shared/loading.dart';
 import 'package:flutter/material.dart';
-
 
 class SignIn extends StatefulWidget {
   final Function toggleView;
@@ -29,11 +28,11 @@ class _SignInState extends State<SignIn> {
     return loading
         ? Loading()
         : Scaffold(
-            backgroundColor: Colors.purple[100],
+            backgroundColor: Colors.blueGrey[300],
             appBar: AppBar(
-              backgroundColor: Colors.deepPurple[900],
-              elevation: 0.0,
-              title: Text('Sign in ', style: TextStyle(color: Colors.white)),
+              backgroundColor: Colors.white,
+              elevation: 3.0,
+              title: Text('Sign in ', style: TextStyle(color: Colors.black)),
               actions: <Widget>[
                 FlatButton.icon(
                   icon: Icon(
@@ -45,7 +44,11 @@ class _SignInState extends State<SignIn> {
                     style: TextStyle(color: Colors.white),
                   ),
                   onPressed: () {
-                    widget.toggleView();
+                    Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Password()))
+                        .then((value) => {
+                              if (value == "admin") {widget.toggleView()}
+                            });
                   },
                 )
               ],
@@ -57,7 +60,7 @@ class _SignInState extends State<SignIn> {
                   child: Column(
                     children: <Widget>[
                       SizedBox(
-                        height: 80.0,
+                        height: 40.0,
                       ),
                       TextFormField(
                         decoration:
@@ -80,11 +83,13 @@ class _SignInState extends State<SignIn> {
                           setState(() => password = val);
                         },
                       ),
-                      SizedBox(height: 40.0),
-                      RaisedButton(
-                          color: Colors.deepPurple[900],
+                      SizedBox(height: 20.0),
+                      FlatButton(
+                          height: 50.0,
+                          minWidth: 300.0,
+                          color: Colors.blueGrey,
                           child: Text(
-                            'Sign In',
+                            '     Sign In      ',
                             style: TextStyle(color: Colors.white, fontSize: 20),
                           ),
                           onPressed: () async {

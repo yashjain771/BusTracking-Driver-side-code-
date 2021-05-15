@@ -25,9 +25,9 @@ class _RegisterState extends State<Register> {
     return loading
         ? Loading()
         : Scaffold(
-            backgroundColor: Colors.orange[300],
+            backgroundColor: Colors.blueGrey[100],
             appBar: AppBar(
-              backgroundColor: Colors.orangeAccent[400],
+              backgroundColor: Colors.blueGrey,
               elevation: 0.0,
               title: Text('Sign Up ', style: TextStyle(color: Colors.black)),
               actions: <Widget>[
@@ -71,8 +71,10 @@ class _RegisterState extends State<Register> {
                         },
                       ),
                       SizedBox(height: 40.0),
-                      RaisedButton(
-                          color: Colors.orange[300],
+                      FlatButton(
+                          height: 40.0,
+                          minWidth: 300.0,
+                          color: Colors.blueGrey,
                           child: Text(
                             'Register',
                             style: TextStyle(color: Colors.black, fontSize: 20),
